@@ -418,6 +418,33 @@
             margin-top: 4px;
         }
 
+        /* ========== AdSense Section ========== */
+        .ads-container {
+            text-align: center;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(99, 102, 241, 0.05);
+            border-radius: var(--radius-md);
+            border: 1px dashed rgba(99, 102, 241, 0.3);
+            max-width: 728px;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ads-container:empty::before {
+            content: 'Advertisement';
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        .ads-container ins {
+            width: 100%;
+            max-width: 728px;
+            min-height: 90px;
+        }
+
         /* ========== Info Section ========== */
         .info-section {
             margin-top: 60px;
@@ -600,6 +627,15 @@
             animation: shimmer 1.5s infinite;
         }
     </style>
+    <!-- ========== AdSense ========== -->
+    <script>
+        // 审核通过后，将下面的 YOUR_PUBLISHER_ID 替换为你的 Publisher ID
+        // 格式: ca-pub-XXXXXXXXXXXXXXXX
+        var adsenseId = 'YOUR_PUBLISHER_ID';
+        if (adsenseId !== 'YOUR_PUBLISHER_ID') {
+            document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-' + adsenseId + '" crossorigin="anonymous"><\/script>');
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -713,6 +749,17 @@
                 </div>
             </section>
 
+            <!-- AdSense Banner -->
+            <div class="ads-container" id="ad-top">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true">
+                </ins>
+            </div>
+
             <!-- Info Section -->
             <section class="info-section">
                 <div class="section-header">
@@ -743,10 +790,21 @@
             <section class="cta-section">
                 <h3>准备好探索你的性格了吗？</h3>
                 <p>选择适合你的测试，开始了解真实的自己</p>
-                <a href="https://sbti.fengfengjishu.top/" target="_blank" rel="noopener" class="cta-btn">
+                    <a href="https://sbti.fengfengjishu.top/" target="_blank" rel="noopener" class="cta-btn">
                     🚀 立即开始测试
                 </a>
             </section>
+
+            <!-- AdSense Bottom Banner -->
+            <div class="ads-container" id="ad-bottom" style="margin-top: 40px;">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true">
+                </ins>
+            </div>
         </main>
 
         <footer>
@@ -758,5 +816,14 @@
             <p>© 2026 MBTI/SBTI 测试导航 · 仅供学习交流，测试版权归原平台所有</p>
         </footer>
     </div>
+
+    <!-- AdSense Script -->
+    <script>
+        // 审核通过后，填入你的 Publisher ID
+        var publisherId = 'YOUR_PUBLISHER_ID';
+        if (publisherId !== 'YOUR_PUBLISHER_ID') {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
 </body>
 </html>
